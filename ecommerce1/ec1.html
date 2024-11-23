@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroShop - Electronics Store</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo h1 {
+            margin-left: 20px;
+        }
+
+        .header nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .header nav ul li {
+            margin-right: 20px;
+        }
+
+        .header nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Product Container */
+        .category-container {
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .category {
+            margin-bottom: 30px;
+        }
+
+        .category h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .product-card h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .product-card p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        .product-card .add-to-cart {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .product-card .add-to-cart:hover {
+            background-color: #555;
+        }
+
+        /* Cart */
+        .cart-container {
+            margin-top: 30px;
+        }
+
+        .cart-container h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .cart-item {
+            background-color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            text-align: left;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item h3, .cart-item p {
+            margin-bottom: 10px;
+        }
+
+        .cart-item .remove-item {
+            color: red;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h1>ElectroShop</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Personal Devices -->
+        <div class="category">
+            <h2>Personal Devices</h2>
+            <div class="product-container">
+                <!-- Smartphones -->
+                <div class="product-card">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-finish-select-202309-6-7inch-pink?wid=2560&hei=1440&fmt=jpeg&qlt=95&.v=1692923784895" alt="iPhone 15">
+                    <h3>iPhone 15</h3>
+                    <p>₹1,00,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.FXIOQ4Lfhgc51dvvBU_2QAHaIc?w=167&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Phone">
+                    <h3>Smartphone</h3>
+                    <p>₹50,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://in-media.apjonlinecdn.com/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/c/0/c08484491_2_4.png" alt="Laptop">
+                    <h3>Laptop</h3>
+                    <p>₹70,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.zGnA6EmFgGR9uBZdcM31ewHaD6?w=1600&h=844&rs=1&pid=ImgDetMain" alt="Samsung Galaxy S23">
+                    <h3>Samsung Galaxy S23</h3>
+                    <p>₹75,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.2PAsVThU_IElRmu8yTSdOAHaHa?rs=1&pid=ImgDetMain" alt="OnePlus 11">
+                    <h3>OnePlus 11</h3>
+                    <p>₹60,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <!-- Tablets -->
+                <div class="product-card">
+                    <img src="https://images-cdn.ubuy.co.in/65073a9092917e41ad4ca116-2021-apple-12-9-inch-ipad-pro-wi-fi.jpg" alt="iPad Pro">
+                    <h3>iPad Pro</h3>
+                    <p>₹80,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.samsung.com/is/image/samsung/p6pim/in/feature/165229335/in-feature-galaxy-tab-a-541215889?$FB_TYPE_A_MO_JPG$" alt="Samsung Galaxy Tab">
+                    <h3>Samsung Galaxy Tab</h3>
+                    <p>₹55,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+                <!-- Laptops -->
+                <div class="product-card">
+                    <img src="https://images-cdn.ubuy.co.in/640053b09e42d309775c8188-apple-13-34-macbook-pro-with-touch.jpg" alt="MacBook Pro">
+                    <h3>MacBook Pro</h3>
+                    <p>₹1,20,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqbulHiauKYx4PClhfKFl5V7KqpwcOGEU2lQ&s" alt="Dell XPS">
+                    <h3>Dell XPS</h3>
+                    <p>₹90,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Home Appliances -->
+        <div class="category">
+            <h2>Home Appliances</h2>
+            <div class="product-container">
+                <div class="product-card">
+                    <img src="https://www.lg.com/content/dam/channel/wcms/in/images/tvs/oled55c3psa_atr_eail_in_c/gallery/TV-OLED-55-C3-A-Gallery-1600-01.jpg/_jcr_content/renditions/thum-1600x1062.jpeg" alt="LG OLED TV">
+                    <h3>LG OLED TV</h3>
+                    <p>₹1,50,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://sharptronics.in/cdn/shop/products/81FhJgKeo_2BL._SL1500.jpg?v=1615887818" alt="Samsung Refrigerator">
+                    <h3>Samsung Refrigerator</h3>
+                    <p>₹60,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/71O7ni1d84L._AC_UF350,350_QL80_.jpg" alt="Panasonic Microwave">
+                    <h3>Panasonic Microwave</h3>
+                    <p>₹20,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="category">
+            <h2>Audio & Video Equipment</h2>
+            <div class="product-container">
+                <div class="product-card">
+                    <img src="https://www.apple.com/v/airpods-pro/m/images/meta/og__eui2mpgzwyaa_overview.png" alt="AirPods Pro">
+                    <h3>AirPods Pro</h3>
+                    <p>₹20,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images-cdn.ubuy.co.in/633ac1a8e22c171ed47edec0-bose-quietcomfort-45-bluetooth-wireless.jpg" alt="Bose Headphones">
+                    <h3>Bose Headphones</h3>
+                    <p>₹30,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://computechstore.in/wp-content/uploads/2023/09/JBL-Xtreme-3-Wireless-Portable-Bluetooth-Speaker-Blue-e1694239250568.jpg" alt="JBL Bluetooth Speaker">
+                    <h3>JBL Bluetooth Speaker</h3>
+                    <p>₹10,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://x.imastudent.com/content/0039733_gopro-hero-11-black-action-camera_500.jpeg" alt="GoPro HERO 11">
+                    <h3>GoPro HERO 11</h3>
+                    <p>₹45,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gaming Devices -->
+        <div class="category">
+            <h2>Gaming Devices</h2>
+            <div class="product-container">
+                <div class="product-card">
+                    <img src="https://blog.playstation.com/tachyon/2023/10/cd56722db7b991b3d7a33f1bafd55f80d0ac553d.png?resize=1088%2C612&crop_strategy=smart" alt="PlayStation 5">
+                    <h3>PlayStation 5</h3>
+                    <p>₹50,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images-cdn.ubuy.co.in/650dba47e2cf65291e3df68a-xbox-series-x-video-game-console-black.jpg" alt="Xbox Series X">
+                    <h3>Xbox Series X</h3>
+                    <p>₹45,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.immediate.co.uk/production/volatile/sites/3/2024/09/Nintendo-Switch-2b7c02f.jpg" alt="Nintendo Switch">
+                    <h3>Nintendo Switch</h3>
+                    <p>₹35,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/RQ/NP/WZ/140642735/steam-deck-64gb-emmc-16gb-ram-7-inch-steamos-3-0-handheld-gaming-console.jpeg" alt="Steam Deck">
+                    <h3>Steam Deck</h3>
+                    <p>₹50,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Office & Productivity -->
+        <div class="category">
+            <h2>Office & Productivity Devices</h2>
+            <div class="product-container">
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOkW3ABTqosCddSsWtD2G692zIGUJH-fzKqw&s" alt="Canon Printer">
+                    <h3>Canon Printer</h3>
+                    <p>₹15,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.samsung.com/is/image/samsung/p6pim/in/lc27r500fhwxxl/gallery/in-c27r5-lc27r500fhwxxl-536897524?$650_519_PNG$" alt="Samsung Curved Monitor">
+                    <h3>Samsung Curved Monitor</h3>
+                    <p>₹25,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/51GQG1Y0sXL._AC_UF1000,1000_QL80_.jpg" alt="WD External SSD">
+                    <h3>WD External SSD</h3>
+                    <p>₹10,000</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more sections for Audio, Gaming, Office, Networking, Medical, Industrial Devices -->
+        <!-- Each section should follow the same structure with updated devices and images -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 ElectroShop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Product added to cart!');
+            });
+        });
+    </script>
+</body>
+</html>
